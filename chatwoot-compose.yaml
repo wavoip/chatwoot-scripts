@@ -6,7 +6,7 @@ services:
       - /data/storage:/app/storage
     labels:
       - traefik.enable=true
-      - traefik.http.routers.chatwoot.rule=Host(CHATWOOT_URL2)
+      - traefik.http.routers.chatwoot.rule=Host(`CHATWOOT_URL2`)
       - traefik.http.routers.chatwoot.entrypoints=websecure
       - traefik.http.routers.chatwoot.priority=1
       - traefik.http.routers.chatwoot.tls.certresolver=myresolver
