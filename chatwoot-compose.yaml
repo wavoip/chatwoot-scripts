@@ -6,13 +6,13 @@ services:
       - /data/storage:/app/storage
     labels:
       - traefik.enable=true
-      - traefik.http.routers.evolution_v2.rule=Host(CHATWOOT_URL2)
-      - traefik.http.routers.evolution_v2.entrypoints=websecure
-      - traefik.http.routers.evolution_v2.priority=1
-      - traefik.http.routers.evolution_v2.tls.certresolver=myresolver
-      - traefik.http.routers.evolution_v2.service=chatwoot
-      - traefik.http.services.evolution_v2.loadbalancer.server.port=3000
-      - traefik.http.services.evolution_v2.loadbalancer.passHostHeader=true
+      - traefik.http.routers.chatwoot.rule=Host(CHATWOOT_URL2)
+      - traefik.http.routers.chatwoot.entrypoints=websecure
+      - traefik.http.routers.chatwoot.priority=1
+      - traefik.http.routers.chatwoot.tls.certresolver=myresolver
+      - traefik.http.routers.chatwoot.service=chatwoot
+      - traefik.http.services.chatwoot.loadbalancer.server.port=3000
+      - traefik.http.services.chatwoot.loadbalancer.passHostHeader=true
 
   rails:
     <<: *base
